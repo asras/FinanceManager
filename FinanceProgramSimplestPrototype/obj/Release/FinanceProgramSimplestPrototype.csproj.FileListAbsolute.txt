@@ -34,3 +34,6 @@ C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestProtot
 C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgramSimplestPrototype\obj\Release\FinanceProgramSimplestPrototype.g.resources
 C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgramSimplestPrototype\obj\Release\FinanceProgramSimplestPrototype.Properties.Resources.resources
 C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgramSimplestPrototype\obj\Release\FinanceProgramSimplestPrototype.csproj.GenerateResource.Cache
+C:\FP\FinanceManager\FinanceProgramSimplestPrototype\bin\Release\FinanceProgramSimplestPrototype.exe.config
+C:\FP\FinanceManager\FinanceProgramSimplestPrototype\obj\Release\FinanceProgramSimplestPrototype.exe
+C:\FP\FinanceManager\FinanceProgramSimplestPrototype\obj\Release\FinanceProgramSimplestPrototype.pdb

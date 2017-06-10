@@ -30,8 +30,7 @@ namespace FinanceProgramSimplestPrototype
         {
             InitializeComponent();
             _data = (Dictionary<string, double>)_repo.GetData();
-            foreach (string key in _data.Keys)
-            {
+            foreach (string key in _data.Keys) {
                 _names.Add(key);
                 _amounts.Add(_data[key]);   
             }
@@ -41,8 +40,7 @@ namespace FinanceProgramSimplestPrototype
             
         }
 
-        public void btnAddItem_Click(object sender, RoutedEventArgs e)
-        {
+        public void btnAddItem_Click(object sender, RoutedEventArgs e) {
             tbInfoMessage.Text = "";
             string nameToAdd = this.InputExpenseType.Text;
             double amountToAdd;
