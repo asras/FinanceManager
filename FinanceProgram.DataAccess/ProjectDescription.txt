@@ -1,0 +1,7 @@
+﻿The repository class is responsible for data-retrieval and data-saving. 
+In this implementation we save the data (which is just a dictionary) in json-format
+in a file specified in a settings file.
+
+Data-retrieval and saving is handled by the (build-in) filestream class. In order to convert
+the data to a string we use the Newtonsoft-package which can serialize and deserialize objects
+to and from the json-format. 

@@ -1,0 +1,16 @@
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\FinanceProgram.DataAccess.dll.config
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\FinanceProgram.DataAccess.dll
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\FinanceProgram.DataAccess.pdb
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\Newtonsoft.Json.dll
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\Newtonsoft.Json.xml
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Release\FinanceProgram.DataAccess.dll
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Release\FinanceProgram.DataAccess.pdb
+C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Release\FinanceProgram.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\FinanceProgram.DataAccess.dll.config
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\FinanceProgram.DataAccess.dll
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\FinanceProgram.DataAccess.pdb
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\Newtonsoft.Json.dll
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Release\Newtonsoft.Json.xml
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Release\FinanceProgram.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Release\FinanceProgram.DataAccess.dll
+C:\Users\asra\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Release\FinanceProgram.DataAccess.pdb
