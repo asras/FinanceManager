@@ -1,7 +1,0 @@
-C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Debug\FinanceProgram.DataAccess.dll.config
-C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Debug\FinanceProgram.DataAccess.dll
-C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Debug\FinanceProgram.DataAccess.pdb
-C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Debug\FinanceProgram.DataAccess.dll
-C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\obj\Debug\FinanceProgram.DataAccess.pdb
-C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Asbjorn\Documents\Visual Studio 2015\Projects\FinanceProgramSimplestPrototype\FinanceProgram.DataAccess\bin\Debug\Newtonsoft.Json.xml

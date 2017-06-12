@@ -10,7 +10,7 @@ namespace FinanceManager.BusinessLogic
 {
     public class DataManager : IDataManager
     {
-        private Repository _repo;
+        private Repository<Dictionary<DateTime, Dictionary<string, List<double>>>> _repo;
         private Dictionary<DateTime, Dictionary<string, List<double>>> _data;
         public DataManager()
         {
