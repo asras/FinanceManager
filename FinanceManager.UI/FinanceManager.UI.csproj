@@ -99,9 +99,9 @@
     <Resource Include="watermark.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FinanceProgram.DataAccess\FinanceManager.DataAccess.csproj">
-      <Project>{d8116647-cfb6-4083-afcc-6c8a2892a401}</Project>
-      <Name>FinanceManager.DataAccess</Name>
+    <ProjectReference Include="..\FinanceManager.BusinessLogic\FinanceManager.BusinessLogic.csproj">
+      <Project>{2ED99424-D20F-4FB0-87B7-B6811C63E886}</Project>
+      <Name>FinanceManager.BusinessLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

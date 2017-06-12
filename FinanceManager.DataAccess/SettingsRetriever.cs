@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace FinanceProgram.DataAccess
+namespace FinanceManager.DataAccess
 {
     public static class SettingsRetriever
     {

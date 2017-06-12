@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinanceProgram.DataAccess
+namespace FinanceManager.DataAccess
 {
     //A repository should implement SaveData and GetData functions.
     //The SaveData function takes the current data as input and returns a boolean that indicates

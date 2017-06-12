@@ -1,0 +1,8 @@
+C:\FP\FinanceManager\FinanceManager.DataAccess\bin\Release\Newtonsoft.Json.dll
+C:\FP\FinanceManager\FinanceManager.DataAccess\bin\Release\Newtonsoft.Json.xml
+C:\FP\FinanceManager\FinanceManager.DataAccess\obj\Release\FinanceManager.DataAccess.csprojResolveAssemblyReference.cache
+C:\FP\FinanceManager\FinanceManager.DataAccess\bin\Release\FinanceManager.DataAccess.dll.config
+C:\FP\FinanceManager\FinanceManager.DataAccess\bin\Release\FinanceManager.DataAccess.dll
+C:\FP\FinanceManager\FinanceManager.DataAccess\bin\Release\FinanceManager.DataAccess.pdb
+C:\FP\FinanceManager\FinanceManager.DataAccess\obj\Release\FinanceManager.DataAccess.dll
+C:\FP\FinanceManager\FinanceManager.DataAccess\obj\Release\FinanceManager.DataAccess.pdb

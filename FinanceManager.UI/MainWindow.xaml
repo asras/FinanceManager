@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinanceProgramSimplestPrototype"
         mc:Ignorable="d"
-        Title="MainWindow" Height="275" Width="440">
+        Title="MainWindow" Height="350" Width="420">
     <Page>
         <Grid>
             <Grid.Background>
@@ -13,24 +13,27 @@
             </Grid.Background>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <Grid Grid.Column="0">
+            <Grid Grid.Column="0" Grid.Row="1">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <ListBox Grid.Column="0" Name="lbItemsName" />
-                <ListBox Grid.Column="1" Name="lbItemsAmount" />
+                <ListBox Grid.Column="0" Name="lbItemsDate" />
+                <ListBox Grid.Column="1" Name="lbItemsName" />
+                <ListBox Grid.Column="2" Name="lbItemsAmount"></ListBox>
             </Grid>
 
-            <Grid Width="200" Grid.Column="1">
+            <Grid Width="300" Grid.Column="0">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
@@ -38,17 +41,20 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox Name="InputExpenseType" Grid.Row="0" Grid.Column="0" Width="100" Height="20" VerticalAlignment="Top"></TextBox>
-                <TextBox Name="InputExpenseAmount" Grid.Row="0" Grid.Column="1" Width="100" Height="20" VerticalAlignment="Top"></TextBox>
-                <TextBlock Name="tbInfoMessage" TextWrapping="WrapWithOverflow" Grid.Row="1" Grid.ColumnSpan="2" FontWeight="Bold"
+                <TextBox Name="InputDate" Grid.Row="0" Grid.Column="0" Width="100" Height="20" VerticalAlignment="Top"></TextBox>
+                <TextBox Name="InputName" Grid.Row="0" Grid.Column="1" Width="100" Height="20" VerticalAlignment="Top"></TextBox>
+                <TextBox Name="InputAmount" Grid.Row="0" Grid.Column="2" Width="100" Height="20" VerticalAlignment="Top"></TextBox>
+                <TextBlock Name="tbInfoMessage" TextWrapping="WrapWithOverflow" Grid.Row="1" Grid.Column ="0" Grid.ColumnSpan="3" FontWeight="Bold"
                            FontSize="22"/>
             </Grid>
             
 
-            <StackPanel Grid.Column="2" Width="Auto" DockPanel.Dock="Right" Margin="10,0,0,0">
+            <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="Auto" DockPanel.Dock="Right" Margin="10,0,0,0">
                 <Button Name="btnAddItem" Click="btnAddItem_Click">Add item</Button>
                 <Button Name="btnDeleteItem" Click="btnDeleteItem_Click">Delete item</Button>
                 <Button Name="btnSaveData" Click="btnSaveData_Click">Save Data</Button>
+                <TextBox Name="SearchInput" Margin="0, 50, 10, 0"/>
+                <Button Name="btnSearchData" Click="btnSearchData_Click" Margin="0,0,10,0">Search</Button>
             </StackPanel>
 
 

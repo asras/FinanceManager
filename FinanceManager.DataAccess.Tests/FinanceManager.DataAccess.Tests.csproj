@@ -6,8 +6,8 @@
     <ProjectGuid>{85885618-6F27-44AA-9830-49F0EF8ABB1C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FinanceProgram.DataAccess.Tests</RootNamespace>
-    <AssemblyName>FinanceProgram.DataAccess.Tests</AssemblyName>
+    <RootNamespace>FinanceManager.DataAccess.Tests</RootNamespace>
+    <AssemblyName>FinanceManager.DataAccess.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,7 +58,7 @@
     <Compile Include="RepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FinanceProgram.DataAccess\FinanceManager.DataAccess.csproj">
+    <ProjectReference Include="..\FinanceManager.DataAccess\FinanceManager.DataAccess.csproj">
       <Project>{d8116647-cfb6-4083-afcc-6c8a2892a401}</Project>
       <Name>FinanceManager.DataAccess</Name>
     </ProjectReference>

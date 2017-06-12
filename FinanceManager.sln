@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.UI", "FinanceProgramSimplestPrototype\FinanceManager.UI.csproj", "{E2A14BD8-301D-4398-BA26-FD88A1BEB508}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.UI", "FinanceManager.UI\FinanceManager.UI.csproj", "{E2A14BD8-301D-4398-BA26-FD88A1BEB508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.DataAccess", "FinanceProgram.DataAccess\FinanceManager.DataAccess.csproj", "{D8116647-CFB6-4083-AFCC-6C8A2892A401}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.DataAccess", "FinanceManager.DataAccess\FinanceManager.DataAccess.csproj", "{D8116647-CFB6-4083-AFCC-6C8A2892A401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.DataAccess.Tests", "FinanceProgram.DataAccess.Tests\FinanceManager.DataAccess.Tests.csproj", "{85885618-6F27-44AA-9830-49F0EF8ABB1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.DataAccess.Tests", "FinanceManager.DataAccess.Tests\FinanceManager.DataAccess.Tests.csproj", "{85885618-6F27-44AA-9830-49F0EF8ABB1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.BusinessLogic", "FinanceManager.BusinessLogic\FinanceManager.BusinessLogic.csproj", "{2ED99424-D20F-4FB0-87B7-B6811C63E886}"
 EndProject

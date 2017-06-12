@@ -1,22 +1,24 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using FinanceManager.DataAccess;
 
-namespace FinanceProgram.DataAccess.Tests
+namespace FinanceManager.DataAccess.Tests
 {
     [TestClass]
     public class RepositoryTests
-    {
+    { 
         private IRepository _repo = new Repository();
         private Dictionary<string, double> _testData = new Dictionary<string, double>();
+
 
 
         [TestMethod]
         public void CheckThatSaveDoesNotThrowException()
         {
+
             _repo.SaveLocation = "testLocation.txt";
             _testData.Add("Bananas", 22.2);
-
             _repo.SaveData(_testData);
         }
 

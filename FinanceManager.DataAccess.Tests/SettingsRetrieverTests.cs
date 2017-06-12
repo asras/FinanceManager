@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FinanceProgram.DataAccess;
-namespace FinanceProgram.DataAccess.Tests
+using FinanceManager.DataAccess;
+namespace FinanceManager.DataAccess.Tests
 {
     [TestClass]
     public class SettingsRetrieverTests

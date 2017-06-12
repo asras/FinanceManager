@@ -1,4 +1,4 @@
-﻿using FinanceProgram.DataAccess;
+﻿using FinanceManager.BusinessLogic;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,71 +22,50 @@ namespace FinanceProgramSimplestPrototype
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<DateTime> _dates = new ObservableCollection<DateTime>();
         private ObservableCollection<string> _names = new ObservableCollection<string>();
-        private ObservableCollection<double> _amounts = new ObservableCollection<double>();
-        private Dictionary<string, double> _data;
-        private Repository _repo = new Repository(); 
+        private ObservableCollection<double> _amounts = new ObservableCollection<double>(); //Sum of transactions for Date+Name
+        private readonly IDataManager _dataManager = new DataManager();
         public MainWindow()
         {
             InitializeComponent();
-            _data = (Dictionary<string, double>)_repo.GetData();
-            foreach (string key in _data.Keys) {
-                _names.Add(key);
-                _amounts.Add(_data[key]);   
-            }
+            _dataManager.InitializeManager(_dates, _names, _amounts);
+            _dataManager.FillObservableCollections(_dates, _names, _amounts);
 
+            lbItemsDate.ItemsSource = _dates;
             lbItemsName.ItemsSource = _names;
             lbItemsAmount.ItemsSource = _amounts;
             
         }
 
         public void btnAddItem_Click(object sender, RoutedEventArgs e) {
-            tbInfoMessage.Text = "";
-            string nameToAdd = this.InputExpenseType.Text;
-            double amountToAdd;
+            string dateToAdd = this.InputDate.Text;
+            string nameToAdd = this.InputName.Text;
+            string amountToAdd = this.InputAmount.Text;
+            string infoMessage =_dataManager.AddData(dateToAdd, nameToAdd, amountToAdd);
 
-            try
-            {
-                amountToAdd = Convert.ToDouble(this.InputExpenseAmount.Text);
-            }
-            catch (FormatException)
-            {
-                tbInfoMessage.Text = "Amount must be a number, dumbass";
-                return;
-            }
-            if (!_names.Contains(nameToAdd))
-            {
-                _names.Add(nameToAdd);
-                _amounts.Add(amountToAdd);
-                _data.Add(nameToAdd, amountToAdd);
-
-            }
-            else
-            {
-                _amounts[_names.IndexOf(nameToAdd)] += amountToAdd;
-                _data[nameToAdd] += amountToAdd;
-            }
-             
-            
-
+            tbInfoMessage.Text = infoMessage;
         }
         
         public void btnDeleteItem_Click(object sendr, RoutedEventArgs e)
         {
-            tbInfoMessage.Text = "";
-            var selectedIndex = lbItemsAmount.SelectedIndex > lbItemsName.SelectedIndex
+            var selectedIndex = lbItemsAmount.SelectedIndex >= lbItemsName.SelectedIndex
                 ? lbItemsAmount.SelectedIndex : lbItemsName.SelectedIndex;
-            _amounts.RemoveAt(selectedIndex);
-            _names.RemoveAt(selectedIndex);
-            _data.Remove(_data.ElementAt(selectedIndex).Key);
+
+            string infoMessage = _dataManager.RemoveAtIndex(selectedIndex);
+            tbInfoMessage.Text = infoMessage;
         }
 
         private void btnSaveData_Click(object sender, RoutedEventArgs e)
         {
-            tbInfoMessage.Text = "";
-            bool success = _repo.SaveData(_data);
-            if (!success) tbInfoMessage.Text = "Saving was not successful. Contact Jesus for Tech-support.";
-            else tbInfoMessage.Text = "You successfully saved. Well, you just pressed a button; I wrote all the code. Thank me later.";
+
+            string infoMessage = _dataManager.SaveData();
+            tbInfoMessage.Text = infoMessage;
+        }
+
+        private void btnSearchData_Click(object sender, RoutedEventArgs e)
+        {
+            tbInfoMessage.Text = "Not implemented yet.";
         }
     }
 }
