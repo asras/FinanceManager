@@ -11,12 +11,12 @@ namespace FinanceProgram.DataAccess
     //whether the save went well.
     //The GetData function has no input; it reads the store location from 
     //the settings and returns an IDictionary<string, double>.
-    public interface IRepository
+    public interface IRepository<T>
     {
         string SaveLocation { get; set; }
-        IDictionary<string, double> GetData();
+        T GetData();
 
-        bool SaveData(IDictionary<string, double> data);
+        bool SaveData(T data);
 
 
     }
