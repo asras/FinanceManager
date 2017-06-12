@@ -58,7 +58,7 @@
     <Compile Include="RepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FinanceProgram.DataAccess\FinanceManager.DataAccess.csproj">
+    <ProjectReference Include="..\FinanceManager.DataAccess\FinanceManager.DataAccess.csproj">
       <Project>{d8116647-cfb6-4083-afcc-6c8a2892a401}</Project>
       <Name>FinanceManager.DataAccess</Name>
     </ProjectReference>
