@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace FinanceManager.DataAccess
 {
-    public class Repository : IRepository
+    public class Repository<T> : IRepository<T> where T : new()
     {
         private FileStream _fileStream;
         private StreamWriter _streamWriter;
@@ -28,7 +28,7 @@ namespace FinanceManager.DataAccess
         }
 
 
-        public IDictionary<string, double> GetData()
+        public T GetData()
         {
             try
             {
@@ -36,19 +36,19 @@ namespace FinanceManager.DataAccess
                 using (_streamReader = new StreamReader(_fileStream))
                 {
                     string storedJsonString = _streamReader.ReadToEnd();
-                    Dictionary<string, double> storedData = JsonConvert.DeserializeObject<Dictionary<string, double>>(storedJsonString);
+                    T storedData = JsonConvert.DeserializeObject<T>(storedJsonString);
                     return storedData;
                 }
             }
             catch (FileNotFoundException)
             {
                 Console.WriteLine("No data was found at specified location. Returning empty data.");
-                return new Dictionary<string, double>();
+                return new T();
             }
                 
         }
 
-        public bool SaveData(IDictionary<string, double> data)
+        public bool SaveData(T data)
         {
 
             //Serialize data to json-string
