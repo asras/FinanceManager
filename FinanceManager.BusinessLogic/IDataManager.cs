@@ -28,7 +28,7 @@ namespace FinanceManager.BusinessLogic
         /// <param name="nameToAdd"></param>
         /// <param name="amountToAdd"></param>
         /// <returns>Info message</returns>
-        string AddData(DateTime dateToAdd, string nameToAdd, double amountToAdd);
+        string AddData(string dateToAdd, string nameToAdd, string amountToAdd);
         /// <summary>
         /// 
         /// </summary>

@@ -30,20 +30,37 @@ namespace FinanceManager.BusinessLogic
             throw new NotImplementedException();
         }
 
-        public string AddData(DateTime dateToAdd, string nameToAdd, double amountToAdd)
+        public string AddData(string dateToAdd, string nameToAdd, string amountToAdd)
         {
-            if (_data.Keys.Contains((nameToAdd, dateToAdd)))
+            DateTime tmpDate = new DateTime();
+            double tmpAmount;
+
+            var dateConversionResult = DateTime.TryParse(dateToAdd, out tmpDate);
+            var amountConversionResult = Double.TryParse(amountToAdd, out tmpAmount);
+
+            if (!dateConversionResult)
             {
-                _data[(nameToAdd, dateToAdd)].Add(amountToAdd);
-                _lAmounts.Add(amountToAdd);
+                return "Wrong date or dateformat specified!";
+            }
+
+            if (!amountConversionResult || tmpAmount < 0)
+            {
+                return "Wrong amount or amountformat specified!";
+            }
+
+
+            if (_data.Keys.Contains((nameToAdd, tmpDate)))
+            {
+                _data[(nameToAdd, tmpDate)].Add(tmpAmount);
+                _lAmounts.Add(tmpAmount);
                 return "(name, date) tuple already existed. Amount appended to list.";
             }
             else
             {
-                _data.Add((nameToAdd, dateToAdd), new List<double>() { amountToAdd });
+                _data.Add((nameToAdd, tmpDate), new List<double>() { tmpAmount });
                 _lNames.Add(nameToAdd);
-                _lDates.Add(dateToAdd);
-                _lAmounts.Add(amountToAdd);
+                _lDates.Add(tmpDate);
+                _lAmounts.Add(tmpAmount);
                 return "(name, date) tuple did not exist. Created (key, value) pair and initialized list.";
             }
         }
