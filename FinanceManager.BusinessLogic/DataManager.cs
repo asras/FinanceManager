@@ -10,8 +10,11 @@ namespace FinanceManager.BusinessLogic
 {
     public class DataManager : IDataManager
     {
-        private Repository<Dictionary<DateTime, Dictionary<string, List<double>>>> _repo;
+        private Repository<Dictionary<(string, DateTime), List<double>>> _repo;
         private Dictionary<DateTime, Dictionary<string, List<double>>> _data;
+        private ObservableCollection<string> _lNames;
+        private ObservableCollection<double> _lAmount;
+        private ObservableCollection<DateTime> _lDates;
         public DataManager()
         {
             //Upon initialization get data from repo
@@ -42,6 +45,7 @@ namespace FinanceManager.BusinessLogic
         public void InitializeManager(ObservableCollection<DateTime> dates, ObservableCollection<string> names,
             ObservableCollection<double> amounts)
         {
+            _lNames = names;
             throw new NotImplementedException();
         }
     }
