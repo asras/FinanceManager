@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -66,6 +67,57 @@ namespace FinanceManager.UI
         private void btnSearchData_Click(object sender, RoutedEventArgs e)
         {
             tbInfoMessage.Text = "Not implemented yet.";
+        }
+
+        private void lbDate_DoubleClick(object sender, MouseEventArgs e)
+        {
+            var orderedLists = OrderListsBy(tup => tup.date);
+
+            _dates = orderedLists.orderedDates;
+            _names = orderedLists.orderedNames;
+            _amounts = orderedLists.orderAmounts;
+        }
+        private void lbName_DoubleClick(object sender, MouseEventArgs e)
+        {
+
+            var orderedLists = OrderListsBy(tup => tup.name);
+
+            _dates = orderedLists.orderedDates;
+            _names = orderedLists.orderedNames;
+            _amounts = orderedLists.orderAmounts;
+        }
+        private void lbAmount_DoubleClick(object sender, MouseEventArgs e)
+        {
+            var orderedLists = OrderListsBy(tup => tup.amount);
+
+            _dates = orderedLists.orderedDates;
+            _names = orderedLists.orderedNames;
+            _amounts = orderedLists.orderAmounts;
+        }
+
+        private void lbItemsDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private (ObservableCollection<DateTime> orderedDates, ObservableCollection<string> orderedNames, ObservableCollection<double> orderAmounts)
+            OrderListsBy<T>(Func<(DateTime date, string name, double amount), T> orderBySelector)
+        {
+            List<(DateTime, string, double)> combinedlist = new List<(DateTime, string, double)>();
+            for (int i = 0; i < _names.Count; i++)
+            {
+                combinedlist.Add((_dates[i], _names[i], _amounts[i]));
+            }
+
+            ObservableCollection<DateTime> sortedDates = new ObservableCollection<DateTime>(
+                combinedlist.OrderBy(orderBySelector).Select(tup => tup.Item1).ToList());
+            ObservableCollection<string> sortedNames = new ObservableCollection<string>(
+                combinedlist.OrderBy(orderBySelector).Select(tup => tup.Item2).ToList());
+            ObservableCollection<double> sortedAmounts = new ObservableCollection<double>(
+                combinedlist.OrderBy(orderBySelector).Select(tup => tup.Item3).ToList());
+
+            return (sortedDates, sortedNames, sortedAmounts);
+
         }
     }
 }

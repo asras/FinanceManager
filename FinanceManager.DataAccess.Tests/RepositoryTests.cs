@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Linq;
+
 
 namespace FinanceManager.DataAccess.Tests
 {
@@ -57,7 +59,54 @@ namespace FinanceManager.DataAccess.Tests
             _repo.SaveData(_testData);
         }
 
+        [TestMethod]
+        public void SaveTuples()
+        {
+            var tuplerepo = new Repository<Dictionary<(string, DateTime), List<double>>>();
 
+            var testdata = new Dictionary<(string, DateTime), List<double>>()
+            {
+                {("test", DateTime.Now), new List<double>() {22.2 } }
+            };
+            bool success = tuplerepo.SaveData(testdata);
+            Assert.IsTrue(success);
+
+        }
+
+        [TestMethod]
+        public void testest()
+        {
+            List<string> testlist = new List<string>()
+            {
+                "Test",
+                "Wooo",
+                "BLUH",
+                "Test"
+            };
+            var testvar = testlist.IndexOf("Test");
+            var testvar2 = testlist.IndexOf("Test");
+            var eoekgpo = testlist.Where(e =>e == "Test").ToList();
+
+            Dictionary<(string, DateTime), string> newdick = new Dictionary<(string, DateTime), string>()
+            {
+                {("test3", DateTime.Now), "1" },
+                {("test2", DateTime.Now), "1" },
+                {("test222", DateTime.Now), "2" }
+            };
+            var newtestlist = newdick.Where(e => e.Value == "1").ToList();
+            var selecttest = newdick.Select(e => e.Value == "1").ToList();
+
+            List<int> aw = new List<int>()
+            {
+                1,
+                0,
+                2
+            };
+
+            var testvar3 = newdick.OrderBy(e => e.Key.Item1).ToList();
+
+            var waijdjiw = testlist.OrderBy(e => e).Select(e => e + Guid.NewGuid().ToString()).ToList();
+        }
         //[TestMethod]
         //public void GetDataTest()
         //{
