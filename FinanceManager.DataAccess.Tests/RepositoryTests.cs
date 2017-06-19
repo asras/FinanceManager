@@ -107,6 +107,7 @@ namespace FinanceManager.DataAccess.Tests
             var etst = "";
             var okwdpokawd = "";
             var pwoida = "";
+            var poipowd = "";
             var waijdjiw = testlist.OrderBy(e => e).Select(e => e + Guid.NewGuid().ToString()).ToList();
         }
         //[TestMethod]
