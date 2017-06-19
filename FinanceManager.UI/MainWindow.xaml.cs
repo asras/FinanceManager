@@ -25,11 +25,11 @@ namespace FinanceManager.UI
         private ObservableCollection<DateTime> _dates = new ObservableCollection<DateTime>();
         private ObservableCollection<string> _names = new ObservableCollection<string>();
         private ObservableCollection<double> _amounts = new ObservableCollection<double>(); //Sum of transactions for Date+Name
-        private readonly IDataManager _dataManager = new DataManager();
+        private readonly IDataManager _dataManager;
         public MainWindow()
         {
             InitializeComponent();
-            _dataManager.InitializeManager(_dates, _names, _amounts);
+            _dataManager = new DataManager(_dates, _names, _amounts);
             _dataManager.FillObservableCollections(_dates, _names, _amounts);
 
             lbItemsDate.ItemsSource = _dates;

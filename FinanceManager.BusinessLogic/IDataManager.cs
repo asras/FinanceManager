@@ -28,7 +28,7 @@ namespace FinanceManager.BusinessLogic
         /// <param name="nameToAdd"></param>
         /// <param name="amountToAdd"></param>
         /// <returns>Info message</returns>
-        string AddData(string dateToAdd, string nameToAdd, string amountToAdd);
+        string AddData(DateTime dateToAdd, string nameToAdd, double amountToAdd);
         /// <summary>
         /// 
         /// </summary>
@@ -40,14 +40,10 @@ namespace FinanceManager.BusinessLogic
         /// </summary>
         /// <returns>Info Message</returns>
         string SaveData();
-
         /// <summary>
-        /// Store references to UI-connected objects.
+        /// 
         /// </summary>
-        /// <param name="dates"></param>
-        /// <param name="names"></param>
-        /// <param name="amounts"></param>
-        void InitializeManager(ObservableCollection<DateTime> dates, ObservableCollection<string> names,
-            ObservableCollection<double> amounts);
+        /// <returns>Info Message</returns>
+        string SyncDataUI();
     }
 }
