@@ -44,6 +44,12 @@ namespace FinanceManager.BusinessLogic
         /// 
         /// </summary>
         /// <returns>Info Message</returns>
-        string SyncDataUI();
+        void SyncDataUI();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Info Message</returns>
+        (ObservableCollection<DateTime> orderedDates, ObservableCollection<string> orderedNames, ObservableCollection<double> orderAmounts)
+                    OrderListsBy<T>(Func<(DateTime date, string name, double amount), T> orderBySelector);
     }
 }
