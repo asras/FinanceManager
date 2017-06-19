@@ -105,7 +105,6 @@ namespace FinanceManager.DataAccess.Tests
 
             var testvar3 = newdick.OrderBy(e => e.Key.Item1).ToList();
             var etst = "";
-            var okwdpokawd = "";
             var waijdjiw = testlist.OrderBy(e => e).Select(e => e + Guid.NewGuid().ToString()).ToList();
         }
         //[TestMethod]
