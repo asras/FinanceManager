@@ -31,7 +31,7 @@ namespace FinanceManager.UI
         {
             InitializeComponent();
             _dataManager = new DataManager(_dates, _names, _amounts);
-            _dataManager.FillObservableCollections(_dates, _names, _amounts);
+            _dataManager.SyncDataUI();
 
             lbItemsDate.ItemsSource = _dates;
             lbItemsName.ItemsSource = _names;
