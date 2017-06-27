@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.UI", "FinanceManager.UI\FinanceManager.UI.csproj", "{E2A14BD8-301D-4398-BA26-FD88A1BEB508}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.DataAccess.Tests", "FinanceManager.DataAccess.Tests\FinanceManager.DataAccess.Tests.csproj", "{85885618-6F27-44AA-9830-49F0EF8ABB1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.BusinessLogic", "FinanceManager.BusinessLogic\FinanceManager.BusinessLogic.csproj", "{2ED99424-D20F-4FB0-87B7-B6811C63E886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.BusinessLogic.Tests", "FinanceManager.BusinessLogic.Tests\FinanceManager.BusinessLogic.Tests.csproj", "{0B5CF55F-E03F-436D-AD84-DE8AA6B70259}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{2ED99424-D20F-4FB0-87B7-B6811C63E886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED99424-D20F-4FB0-87B7-B6811C63E886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ED99424-D20F-4FB0-87B7-B6811C63E886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B5CF55F-E03F-436D-AD84-DE8AA6B70259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B5CF55F-E03F-436D-AD84-DE8AA6B70259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B5CF55F-E03F-436D-AD84-DE8AA6B70259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B5CF55F-E03F-436D-AD84-DE8AA6B70259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
