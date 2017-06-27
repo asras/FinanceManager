@@ -70,7 +70,7 @@ namespace FinanceManager.DataAccess.Tests
             };
             bool success = tuplerepo.SaveData(testdata);
             Assert.IsTrue(success);
-
+            
         }
 
         [TestMethod]

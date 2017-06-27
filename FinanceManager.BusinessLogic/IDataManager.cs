@@ -36,7 +36,7 @@ namespace FinanceManager.BusinessLogic
         /// 
         /// </summary>
         /// <returns>Info Message</returns>
-        void SyncDataUI(ObservableCollection<DateTime> dates, ObservableCollection<string> names, ObservableCollection<double> amounts);
+        (ObservableCollection<DateTime> orderedDates, ObservableCollection<string> orderedNames, ObservableCollection<double> orderedAmounts) SyncDataUI(ObservableCollection<DateTime> dates, ObservableCollection<string> names, ObservableCollection<double> amounts);
         /// <summary>
         /// 
         /// </summary>

@@ -57,12 +57,21 @@ namespace FinanceManager.BusinessLogic
 
         public string SaveData()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _repo.SaveData(_data);
+                return "Saving successful.";
+            }
+            catch
+            {
+                return "Saving failed.";
+            }
         }
 
-        public void SyncDataUI(ObservableCollection<DateTime> dates, ObservableCollection<string> names,
+        public (ObservableCollection<DateTime> orderedDates, ObservableCollection<string> orderedNames, ObservableCollection<double> orderedAmounts) SyncDataUI(ObservableCollection<DateTime> dates, ObservableCollection<string> names,
             ObservableCollection<double> amounts)
         {
+            
             ObservableCollection<string> tmpNames = new ObservableCollection<string>();
             ObservableCollection<DateTime> tmpDates = new ObservableCollection<DateTime>();
             ObservableCollection<double> tmpAmounts = new ObservableCollection<double>();
@@ -78,11 +87,11 @@ namespace FinanceManager.BusinessLogic
             //dates = tmpDates;
             //amounts = tmpAmounts;
 
-            var orderedLists = OrderListsBy(tmpDates, tmpNames, tmpAmounts, tup => tup.date);
-
-            dates = orderedLists.orderedDates;
-            names = orderedLists.orderedNames;
-            amounts = orderedLists.orderedAmounts;
+             return OrderListsBy(tmpDates, tmpNames, tmpAmounts, tup => tup.date);
+            
+            //dates = orderedLists.orderedDates;
+            //names = orderedLists.orderedNames;
+            //amounts = orderedLists.orderedAmounts;
         }
 
         public (ObservableCollection<DateTime> orderedDates, ObservableCollection<string> orderedNames, ObservableCollection<double> orderedAmounts)

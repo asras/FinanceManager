@@ -25,7 +25,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0" Name="lbItemsDate" MouseDoubleClick="lbDate_DoubleClick" SelectionChanged="lbItemsDate_SelectionChanged"/>
+            <ListBox Grid.Column="0" Name="lbItemsDate" MouseDoubleClick="lbDate_DoubleClick" SelectionChanged="lbItemsDate_SelectionChanged" />
             <ListBox Grid.Column="1" Name="lbItemsName" MouseDoubleClick="lbName_DoubleClick"/>
             <ListBox Grid.Column="2" Name="lbItemsAmount" MouseDoubleClick="lbAmount_DoubleClick"></ListBox>
         </Grid>
