@@ -30,8 +30,8 @@ namespace FinanceManager.UI
         public MainWindow()
         {
             InitializeComponent();
-            _dataManager = new DataManager(_dates, _names, _amounts);
-            _dataManager.SyncDataUI();
+            _dataManager = new DataManager();
+            _dataManager.SyncDataUI(_dates, _names, _amounts);
 
             lbItemsDate.ItemsSource = _dates;
             lbItemsName.ItemsSource = _names;
@@ -43,7 +43,8 @@ namespace FinanceManager.UI
             string dateToAdd = this.InputDate.Text;
             string nameToAdd = this.InputName.Text;
             string amountToAdd = this.InputAmount.Text;
-            string infoMessage =_dataManager.AddData(dateToAdd, nameToAdd, amountToAdd);
+            string infoMessage = _dataManager.AddData(dateToAdd, nameToAdd, amountToAdd);
+            _dataManager.SyncDataUI(_dates, _names, _amounts);
 
             tbInfoMessage.Text = infoMessage;
         }
@@ -53,7 +54,7 @@ namespace FinanceManager.UI
             var selectedIndex = lbItemsAmount.SelectedIndex >= lbItemsName.SelectedIndex
                 ? lbItemsAmount.SelectedIndex : lbItemsName.SelectedIndex;
 
-            string infoMessage = _dataManager.RemoveAtIndex(selectedIndex);
+            string infoMessage = _dataManager.RemoveAtIndex(_names[selectedIndex], _dates[selectedIndex]);
             tbInfoMessage.Text = infoMessage;
         }
 
@@ -71,28 +72,28 @@ namespace FinanceManager.UI
 
         private void lbDate_DoubleClick(object sender, MouseEventArgs e)
         {
-            var orderedLists = _dataManager.OrderListsBy(tup => tup.date);
+            var orderedLists = _dataManager.OrderListsBy(_dates, _names, _amounts, tup => tup.date);
 
             _dates = orderedLists.orderedDates;
             _names = orderedLists.orderedNames;
-            _amounts = orderedLists.orderAmounts;
+            _amounts = orderedLists.orderedAmounts;
         }
         private void lbName_DoubleClick(object sender, MouseEventArgs e)
         {
 
-            var orderedLists = _dataManager.OrderListsBy(tup => tup.name);
+            var orderedLists = _dataManager.OrderListsBy(_dates, _names, _amounts, tup => tup.name);
 
             _dates = orderedLists.orderedDates;
             _names = orderedLists.orderedNames;
-            _amounts = orderedLists.orderAmounts;
+            _amounts = orderedLists.orderedAmounts;
         }
         private void lbAmount_DoubleClick(object sender, MouseEventArgs e)
         {
-            var orderedLists = _dataManager.OrderListsBy(tup => tup.amount);
+            var orderedLists = _dataManager.OrderListsBy(_dates, _names, _amounts, tup => tup.amount);
 
             _dates = orderedLists.orderedDates;
             _names = orderedLists.orderedNames;
-            _amounts = orderedLists.orderAmounts;
+            _amounts = orderedLists.orderedAmounts;
         }
 
         private void lbItemsDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
