@@ -12,22 +12,10 @@ namespace FinanceManager.BusinessLogic
     {
         private Repository<Dictionary<(string, DateTime), List<double>>> _repo = new Repository<Dictionary<(string, DateTime), List<double>>>();
         private Dictionary<(string name, DateTime date), List<double>> _data;
-        private ObservableCollection<string> _lNames;
-        private ObservableCollection<double> _lAmounts;
-        private ObservableCollection<DateTime> _lDates;
-        public DataManager(ref ObservableCollection<DateTime> dates, ref ObservableCollection<string> names,
-            ref ObservableCollection<double> amounts)
+        public DataManager()
         {
             //Upon initialization get data from repo
             _data = _repo.GetData();
-            _lNames = names;
-            _lDates = dates;
-            _lAmounts = amounts;
-        }
-        public void FillObservableCollections(ObservableCollection<DateTime> dates, ObservableCollection<string> names,
-            ObservableCollection<double> amounts)
-        {
-            throw new NotImplementedException();
         }
 
         public string AddData(string dateToAdd, string nameToAdd, string amountToAdd)
@@ -52,25 +40,19 @@ namespace FinanceManager.BusinessLogic
             if (_data.Keys.Contains((nameToAdd, tmpDate)))
             {
                 _data[(nameToAdd, tmpDate)].Add(tmpAmount);
-                _lAmounts.Add(tmpAmount);
                 return "(name, date) tuple already existed. Amount appended to list.";
             }
             else
             {
                 _data.Add((nameToAdd, tmpDate), new List<double>() { tmpAmount });
-                _lNames.Add(nameToAdd);
-                _lDates.Add(tmpDate);
-                _lAmounts.Add(tmpAmount);
                 return "(name, date) tuple did not exist. Created (key, value) pair and initialized list.";
             }
         }
 
-        public string RemoveAtIndex(int selectedIndex)
+        public string RemoveAtIndex(string name, DateTime date)
         {
-            _data.Remove((_lNames[selectedIndex], _lDates[selectedIndex]));
-            SyncDataUI();
-
-            return "Item at specified index removed.";
+            _data.Remove((name, date));
+            return "Specific item removed.";
         }
 
         public string SaveData()
@@ -78,7 +60,8 @@ namespace FinanceManager.BusinessLogic
             throw new NotImplementedException();
         }
 
-        public void SyncDataUI()
+        public void SyncDataUI(ObservableCollection<DateTime> dates, ObservableCollection<string> names,
+            ObservableCollection<double> amounts)
         {
             ObservableCollection<string> tmpNames = new ObservableCollection<string>();
             ObservableCollection<DateTime> tmpDates = new ObservableCollection<DateTime>();
@@ -91,20 +74,25 @@ namespace FinanceManager.BusinessLogic
                 tmpAmounts.Add(entry.Value.Sum());
             }
 
-            _lNames = tmpNames;
-            _lDates = tmpDates;
-            _lAmounts = tmpAmounts;
+            //names = tmpNames;
+            //dates = tmpDates;
+            //amounts = tmpAmounts;
 
-            OrderListsBy(tup => tup.date);
+            var orderedLists = OrderListsBy(tmpDates, tmpNames, tmpAmounts, tup => tup.date);
+
+            dates = orderedLists.orderedDates;
+            names = orderedLists.orderedNames;
+            amounts = orderedLists.orderedAmounts;
         }
 
-        public (ObservableCollection<DateTime> orderedDates, ObservableCollection<string> orderedNames, ObservableCollection<double> orderAmounts)
-                    OrderListsBy<T>(Func<(DateTime date, string name, double amount), T> orderBySelector)
+        public (ObservableCollection<DateTime> orderedDates, ObservableCollection<string> orderedNames, ObservableCollection<double> orderedAmounts)
+                    OrderListsBy<T>(ObservableCollection<DateTime> dates, ObservableCollection<string> names, 
+            ObservableCollection<double> amounts, Func<(DateTime date, string name, double amount), T> orderBySelector)
         {
             List<(DateTime, string, double)> combinedlist = new List<(DateTime, string, double)>();
-            for (int i = 0; i < _lNames.Count; i++)
+            for (int i = 0; i < names.Count; i++)
             {
-                combinedlist.Add((_lDates[i], _lNames[i], _lAmounts[i]));
+                combinedlist.Add((dates[i], names[i], amounts[i]));
             }
 
             ObservableCollection<DateTime> sortedDates = new ObservableCollection<DateTime>(
