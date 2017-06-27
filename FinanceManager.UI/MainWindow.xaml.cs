@@ -21,82 +21,12 @@ namespace FinanceManager.UI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : NavigationWindow
     {
-        private ObservableCollection<DateTime> _dates = new ObservableCollection<DateTime>();
-        private ObservableCollection<string> _names = new ObservableCollection<string>();
-        private ObservableCollection<double> _amounts = new ObservableCollection<double>(); //Sum of transactions for Date+Name
-        private readonly IDataManager _dataManager;
+
         public MainWindow()
         {
             InitializeComponent();
-            _dataManager = new DataManager(_dates, _names, _amounts);
-            _dataManager.SyncDataUI();
-
-            lbItemsDate.ItemsSource = _dates;
-            lbItemsName.ItemsSource = _names;
-            lbItemsAmount.ItemsSource = _amounts;
-            
-        }
-
-        public void btnAddItem_Click(object sender, RoutedEventArgs e) {
-            string dateToAdd = this.InputDate.Text;
-            string nameToAdd = this.InputName.Text;
-            string amountToAdd = this.InputAmount.Text;
-            string infoMessage =_dataManager.AddData(dateToAdd, nameToAdd, amountToAdd);
-
-            tbInfoMessage.Text = infoMessage;
-        }
-        
-        public void btnDeleteItem_Click(object sendr, RoutedEventArgs e)
-        {
-            var selectedIndex = lbItemsAmount.SelectedIndex >= lbItemsName.SelectedIndex
-                ? lbItemsAmount.SelectedIndex : lbItemsName.SelectedIndex;
-
-            string infoMessage = _dataManager.RemoveAtIndex(selectedIndex);
-            tbInfoMessage.Text = infoMessage;
-        }
-
-        private void btnSaveData_Click(object sender, RoutedEventArgs e)
-        {
-
-            string infoMessage = _dataManager.SaveData();
-            tbInfoMessage.Text = infoMessage;
-        }
-
-        private void btnSearchData_Click(object sender, RoutedEventArgs e)
-        {
-            tbInfoMessage.Text = "Not implemented yet.";
-        }
-
-        private void lbDate_DoubleClick(object sender, MouseEventArgs e)
-        {
-            var orderedLists = _dataManager.OrderListsBy(tup => tup.date);
-
-            _dates = orderedLists.orderedDates;
-            _names = orderedLists.orderedNames;
-            _amounts = orderedLists.orderAmounts;
-        }
-        private void lbName_DoubleClick(object sender, MouseEventArgs e)
-        {
-
-            var orderedLists = _dataManager.OrderListsBy(tup => tup.name);
-
-            _dates = orderedLists.orderedDates;
-            _names = orderedLists.orderedNames;
-            _amounts = orderedLists.orderAmounts;
-        }
-        private void lbAmount_DoubleClick(object sender, MouseEventArgs e)
-        {
-            var orderedLists = _dataManager.OrderListsBy(tup => tup.amount);
-
-            _dates = orderedLists.orderedDates;
-            _names = orderedLists.orderedNames;
-            _amounts = orderedLists.orderAmounts;
-        }
-
-        private void lbItemsDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
         }
     }

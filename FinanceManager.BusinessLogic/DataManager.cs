@@ -15,8 +15,8 @@ namespace FinanceManager.BusinessLogic
         private ObservableCollection<string> _lNames;
         private ObservableCollection<double> _lAmounts;
         private ObservableCollection<DateTime> _lDates;
-        public DataManager(ObservableCollection<DateTime> dates, ObservableCollection<string> names,
-            ObservableCollection<double> amounts)
+        public DataManager(ref ObservableCollection<DateTime> dates, ref ObservableCollection<string> names,
+            ref ObservableCollection<double> amounts)
         {
             //Upon initialization get data from repo
             _data = _repo.GetData();
